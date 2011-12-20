@@ -1,0 +1,5 @@
+This little App changes the volumes within the Android OS, using the AudioManager.
+
+It's mainly based on the code of DimasTheDriver, found in a post at http://www.41post.com/
+See: http://www.41post.com/3995/programming/android-changing-the-ringers-volume
+
