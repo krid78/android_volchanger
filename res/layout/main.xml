@@ -65,7 +65,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar02"
+            android:id="@+id/DTMFSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -98,7 +98,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar03"
+            android:id="@+id/MusicSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -131,7 +131,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar04"
+            android:id="@+id/NotifySeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -164,7 +164,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar05"
+            android:id="@+id/RingSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -197,7 +197,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar06"
+            android:id="@+id/SystemSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -230,7 +230,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <SeekBar
-            android:id="@+id/SeekBar07"
+            android:id="@+id/CallSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1" />

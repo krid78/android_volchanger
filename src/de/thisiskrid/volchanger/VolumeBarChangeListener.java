@@ -13,11 +13,13 @@ public class VolumeBarChangeListener implements OnSeekBarChangeListener {
 	private AudioManager amanager;
 
 	public VolumeBarChangeListener(AudioManager amanager, SeekBar bar, int streamId) {
-		Log.d(TAG, "Constructor called");
+		Log.d(TAG, "Constructor called for "+streamId);
 		this.streamId = streamId;
 		this.amanager = amanager;
 		
-		Log.d(TAG, String.format("Max: %d", amanager.getStreamMaxVolume(streamId)));
+		//TODO Let ProgressBar work between 0 and 100 and map the value to one of 0..MaxVolume this will make the bars smoother
+		
+		Log.i(TAG, String.format("Stream: %d, MaxVolume: %d", this.streamId, amanager.getStreamMaxVolume(streamId)));
         //sets the range between 0 and the max volume
         bar.setMax(amanager.getStreamMaxVolume(streamId));
         //set the seek bar progress to 1
@@ -29,8 +31,9 @@ public class VolumeBarChangeListener implements OnSeekBarChangeListener {
 
 	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-		Log.d(TAG, String.format("SeekBar: %d, Progress: %d", seekBar, progress));
-		amanager.setStreamVolume(this.streamId, progress, AudioManager.FLAG_SHOW_UI + AudioManager.FLAG_PLAY_SOUND);
+		Log.d(TAG, String.format("SeekBar: %d, Progress: %d", this.streamId, progress));
+		//amanager.setStreamVolume(this.streamId, progress, AudioManager.FLAG_SHOW_UI + AudioManager.FLAG_PLAY_SOUND);
+		amanager.setStreamVolume(this.streamId, progress, AudioManager.FLAG_PLAY_SOUND);
 
 	}
 

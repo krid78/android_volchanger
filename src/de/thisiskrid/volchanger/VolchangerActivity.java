@@ -5,6 +5,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.SeekBar;
 
 public class VolchangerActivity extends Activity {
@@ -15,6 +16,11 @@ public class VolchangerActivity extends Activity {
 	private AudioManager audiomanager;
 	private SeekBar alarmBar;
 	private SeekBar dtmfBar;
+	private SeekBar musicBar;
+	private SeekBar notifyBar;
+	private SeekBar ringBar;
+	private SeekBar systemBar;
+	private SeekBar callBar;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -24,21 +30,31 @@ public class VolchangerActivity extends Activity {
 		setContentView(R.layout.main);
 
 		// at first get the audio manager
-		try {
-			audiomanager = (AudioManager) this
-					.getSystemService(Context.AUDIO_SERVICE);
-		} catch (Exception ex) {
-			Log.wtf(TAG, "Did not get the AudioManager", ex);
-		}
+		audiomanager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
 
 		// find right bar
 		alarmBar = (SeekBar) findViewById(R.id.AlarmSeekBar);
 		// now connect seek bars with it's corresponding volume
 		alarmBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, alarmBar, AudioManager.STREAM_ALARM));
 
-		dtmfBar = (SeekBar) findViewById(R.id.AlarmSeekBar);
+		dtmfBar = (SeekBar) findViewById(R.id.DTMFSeekBar);
 		dtmfBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, dtmfBar, AudioManager.STREAM_DTMF));
 
+		musicBar = (SeekBar) findViewById(R.id.MusicSeekBar);
+		musicBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, musicBar, AudioManager.STREAM_MUSIC));
+		
+		notifyBar = (SeekBar) findViewById(R.id.NotifySeekBar);
+		notifyBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, notifyBar, AudioManager.STREAM_NOTIFICATION));
+		
+		ringBar = (SeekBar) findViewById(R.id.RingSeekBar);
+		ringBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, ringBar, AudioManager.STREAM_RING));
+		
+		systemBar = (SeekBar) findViewById(R.id.SystemSeekBar);
+		systemBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, systemBar, AudioManager.STREAM_SYSTEM));
+
+		callBar = (SeekBar) findViewById(R.id.CallSeekBar);
+		callBar.setOnSeekBarChangeListener(new VolumeBarChangeListener(audiomanager, callBar, AudioManager.STREAM_VOICE_CALL));
+		
 	}
 
 	@Override
@@ -76,4 +92,19 @@ public class VolchangerActivity extends Activity {
 		super.onDestroy();
 		// The activity is about to be destroyed.
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) 
+	{
+		//if one of the volume keys were pressed
+		if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP)
+		{
+			Log.i(TAG, "KeyEvent");
+			//change the seek bar progress indicator position
+			ringBar.setProgress(audiomanager.getStreamVolume(AudioManager.STREAM_RING));
+		}
+		//propagate the key event
+		return super.onKeyDown(keyCode, event);
+	}
+
 }
