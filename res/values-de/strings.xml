@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="hello_world">Hallo Welt!</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="stream_alarm">Alarm</string>
+    <string name="stream_dtmf">DTMF Töne</string>
+    <string name="stream_music">Musik</string>
+    <string name="stream_notification">Ereignisse</string>
+    <string name="stream_ring">Klingelton</string>
+    <string name="stream_system">System</string>
+    <string name="stream_voice_call">Anrufe</string>
+
+</resources>
