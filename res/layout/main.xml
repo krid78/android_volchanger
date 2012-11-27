@@ -4,8 +4,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" android:isScrollContainer="true">
 <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
@@ -25,7 +25,8 @@
     <LinearLayout
         android:id="@+id/LinearLayout01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:paddingBottom="5pt">
+        android:layout_height="wrap_content"
+		android:paddingBottom="5pt">
 
         <TextView
             android:id="@+id/TextView02"
@@ -36,7 +37,7 @@
 
         <SeekBar
             android:id="@+id/AlarmSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -70,7 +71,7 @@
 
         <SeekBar
             android:id="@+id/DTMFSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -103,7 +104,7 @@
 
         <SeekBar
             android:id="@+id/MusicSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -136,7 +137,7 @@
 
         <SeekBar
             android:id="@+id/NotifySeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -169,7 +170,7 @@
 
         <SeekBar
             android:id="@+id/RingSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -202,7 +203,7 @@
 
         <SeekBar
             android:id="@+id/SystemSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -235,7 +236,7 @@
 
         <SeekBar
             android:id="@+id/CallSeekBar"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
